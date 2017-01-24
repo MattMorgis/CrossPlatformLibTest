@@ -7,23 +7,35 @@
 //
 
 #import "ViewController.h"
+#import "HWHelloWorld.h"
 
 @interface ViewController ()
+
+@property (nonatomic, strong) HWHelloWorld *helloWorldInterface;
+
+@property (weak, nonatomic) IBOutlet UILabel *helloWorldLabel;
 
 @end
 
 @implementation ViewController
 
+- (HWHelloWorld *)helloWorldInterface {
+    if (!_helloWorldInterface) {
+        _helloWorldInterface = [HWHelloWorld create];
+    }
+    
+    return _helloWorldInterface;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    self.helloWorldLabel.text = @"";
 }
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)getHelloWorldButtonPressed:(id)sender {
+    NSMutableString *currentLabelText = [NSMutableString stringWithString:self.helloWorldLabel.text];
+    [currentLabelText appendFormat:@"%@ \n \n", [self.helloWorldInterface getHelloWorld]];
+    self.helloWorldLabel.text = currentLabelText;
 }
-
 
 @end
