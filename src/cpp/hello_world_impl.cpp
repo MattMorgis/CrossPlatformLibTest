@@ -12,7 +12,7 @@ namespace helloworld {
     }
 
     std::string HelloWorldImpl::get_hello_world() {
-        std::string myString = "Hello World!";
+        std::string myString = "Hello World! ";
 
         time_t t = time(0);
         tm now=*localtime(&t);
