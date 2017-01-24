@@ -62,8 +62,8 @@
 			isa = PBXGroup;
 			children = (
 				2D48410D1E37E63C00EDD87E /* hello_world.hpp */,
-				2D48410E1E37E65100EDD87E /* hello_world_impl.cpp */,
 				2D48410F1E37E65100EDD87E /* hello_world_impl.hpp */,
+				2D48410E1E37E65100EDD87E /* hello_world_impl.cpp */,
 				2D4841061E37E5E300EDD87E /* main.cpp */,
 			);
 			path = HelloWorld;
